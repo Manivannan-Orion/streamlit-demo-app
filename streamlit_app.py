@@ -4,9 +4,6 @@ import time
 
 import streamlit as st
 
-# Constants
-NUM_IMAGES_PER_ROW = 3
-
 
 with st.sidebar:
     st.title('Data Upload')
@@ -26,17 +23,7 @@ if "messages" not in st.session_state:
     st.session_state.greetings = False
 
 
-# Greet user
-if not st.session_state.greetings:
-    with st.chat_message("assistant"):
-        intro = "Hey! I am Magic Chat, your assistant for finding the best Magic The Gathering cards to build your dream deck. Let's get started!"
-        st.markdown(intro)
-        # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content": intro})
-        st.session_state.greetings = True
-
-
-if prompt := (st.chat_input("What cards are you looking for?")):
+if prompt := (st.chat_input("Please ask your problem")):
     # Display user message in chat message container
     with st.chat_message("user"):
         # st.markdown(prompt)
@@ -46,9 +33,6 @@ if prompt := (st.chat_input("What cards are you looking for?")):
 
     prompt = prompt.replace('"', "").replace("'", "")
 
-    # images = [
-    #     "https://cards.scryfall.io/normal/front/b/4/b46e83d3-c66d-42fb-8435-b6c448db01ae.jpg?1561842566"
-    # ]
     if prompt != "":
         query = prompt.strip().lower()
         print(f"user query is {query}")
