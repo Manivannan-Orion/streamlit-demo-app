@@ -12,7 +12,7 @@ with st.sidebar:
 
 # Title
 st.title("🔮 Support Helpdesk")
-intro = "Hey! I am Magic Chat, your assistant for finding the best Magic The Gathering cards to build your dream deck. Let's get started!"
+intro = "Hey! I am Pre IT Support chat, your assistant for finding the best answer to your issues. Let's get started!"
 st.markdown(intro)
 
 
